@@ -1,0 +1,932 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a>gsm-modem (v0.3.19)</a>
+</h1>
+<h4>A package for controlling gsm modem connected to serial port using AT commands</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gsm-modem">module gsm-modem</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gsm-modem.</span>pdu</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gsm-modem.pdu">module gsm-modem.pdu</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gsm-modem.pdu.deSwapNibbles">
+            function <span class="apidocSignatureSpan">gsm-modem.pdu.</span>deSwapNibbles
+            <span class="apidocSignatureSpan">(nibbles)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gsm-modem.pdu.decode16Bit">
+            function <span class="apidocSignatureSpan">gsm-modem.pdu.</span>decode16Bit
+            <span class="apidocSignatureSpan">(data, length)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gsm-modem.pdu.decode7Bit">
+            function <span class="apidocSignatureSpan">gsm-modem.pdu.</span>decode7Bit
+            <span class="apidocSignatureSpan">(code, length, unPadding)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gsm-modem.pdu.detectEncoding">
+            function <span class="apidocSignatureSpan">gsm-modem.pdu.</span>detectEncoding
+            <span class="apidocSignatureSpan">(dataCodingScheme)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gsm-modem.pdu.encode16Bit">
+            function <span class="apidocSignatureSpan">gsm-modem.pdu.</span>encode16Bit
+            <span class="apidocSignatureSpan">(inTextNumberArray)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gsm-modem.pdu.encode7Bit">
+            function <span class="apidocSignatureSpan">gsm-modem.pdu.</span>encode7Bit
+            <span class="apidocSignatureSpan">(inTextNumberArray, paddingBits)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gsm-modem.pdu.generate">
+            function <span class="apidocSignatureSpan">gsm-modem.pdu.</span>generate
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gsm-modem.pdu.messageToNumberArray">
+            function <span class="apidocSignatureSpan">gsm-modem.pdu.</span>messageToNumberArray
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gsm-modem.pdu.parse">
+            function <span class="apidocSignatureSpan">gsm-modem.pdu.</span>parse
+            <span class="apidocSignatureSpan">(pdu)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gsm-modem.pdu.parseStatusReport">
+            function <span class="apidocSignatureSpan">gsm-modem.pdu.</span>parseStatusReport
+            <span class="apidocSignatureSpan">(pdu, smsc_parsed)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gsm-modem.pdu.swapNibbles">
+            function <span class="apidocSignatureSpan">gsm-modem.pdu.</span>swapNibbles
+            <span class="apidocSignatureSpan">(nibbles)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gsm-modem.pdu.ussdEncode">
+            function <span class="apidocSignatureSpan">gsm-modem.pdu.</span>ussdEncode
+            <span class="apidocSignatureSpan">(ussd)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gsm-modem" id="apidoc.module.gsm-modem">module gsm-modem</a></h1>
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gsm-modem.pdu" id="apidoc.module.gsm-modem.pdu">module gsm-modem.pdu</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gsm-modem.pdu.deSwapNibbles" id="apidoc.element.gsm-modem.pdu.deSwapNibbles">
+        function <span class="apidocSignatureSpan">gsm-modem.pdu.</span>deSwapNibbles
+        <span class="apidocSignatureSpan">(nibbles)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deSwapNibbles = function (nibbles) {
+    var out = '';
+    for(var i = 0; i&lt; nibbles.length; i=i+2) {
+        if(nibbles[i] === 'F') //Dont consider trailing F.
+            out += parseInt(nibbles[i+1], 16).toString(10);
+        else
+            out += parseInt(nibbles[i+1], 16).toString(10)+parseInt(nibbles[i], 16).toString(10);
+    }
+    return out;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if(senderSize % 2 === 1)
+    senderSize++;
+
+obj.sender_type = parseInt(buffer[2]).toString(16);
+if (obj.sender_type === 'd0') {
+    obj.sender = this.decode7Bit(pdu.slice(cursor, cursor+senderSize), Math.floor(senderSize*4/7)).trim();
+} else {
+    obj.sender = pduParser.<span class="apidocCodeKeywordSpan">deSwapNibbles</span>(pdu.slice(cursor, cursor+senderSize));
+}
+cursor += senderSize;
+
+var protocolIdentifier = pdu.slice(cursor, cursor+2);
+cursor += 2;
+
+var dataCodingScheme = pdu.slice(cursor, cursor+2);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gsm-modem.pdu.decode16Bit" id="apidoc.element.gsm-modem.pdu.decode16Bit">
+        function <span class="apidocSignatureSpan">gsm-modem.pdu.</span>decode16Bit
+        <span class="apidocSignatureSpan">(data, length)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decode16Bit = function (data, length) {
+    //We are getting ucs2 characters.
+    var ucs2 = '';
+    for(var i = 0;i&lt;=data.length-1;i=i+4) {
+        ucs2 += String.fromCharCode("0x"+data[i]+data[i+1]+data[i+2]+data[i+3]);
+    }
+
+    return ucs2;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+processed = true;
+if (status === 1) { //cancel USSD session
+  this.sendCommand('AT+CUSD=2');
+}
+var encoding = Pdu.detectEncoding(dcs);
+var text = '';
+if (encoding === '16bit') {
+  text = Pdu.<span class="apidocCodeKeywordSpan">decode16Bit</span>(data);
+} else if (encoding === '7bit') {
+  text = Pdu.decode7Bit(data);
+} else {
+  cb(new Error('Unknown encoding'));
+  return;
+}
+cb(undefined, text);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gsm-modem.pdu.decode7Bit" id="apidoc.element.gsm-modem.pdu.decode7Bit">
+        function <span class="apidocSignatureSpan">gsm-modem.pdu.</span>decode7Bit
+        <span class="apidocSignatureSpan">(code, length, unPadding)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decode7Bit = function (code, length, unPadding) {
+    //We are getting 'septeps'. We should decode them.
+    var binary = '';
+    for(var i = 0; i&lt;code.length;i++)
+        binary += ('0000'+parseInt(code.slice(i,i+1), 16).toString(2)).slice(-4);
+
+    //This step is for 'unpadding' the padded data. If it has been encoded with 1 bit padding as it
+    //happens when the sender used a 7-bit message concatenation (cf http://mobiletidings.com/2009/02/18/combining-sms-messages/)
+    if (unPadding){
+        var binary2 = '';
+        binary = binary + '00000000';
+        for (var i=0; i&lt;binary.length/8 - 1 ; i++)
+        {
+            binary2 += (binary.slice((i+1)*8+(8-unPadding), (i+2)*8) + binary.slice(i*8,i*8+(8-unPadding)));
+        }
+        binary = binary2;
+    }
+
+    var bin = Array();
+    var cursor = 0;
+    var fromPrevious = '';
+    var i = 0;
+    while(binary[i]) {
+        var remaining = 7 - fromPrevious.length;
+        var toNext = 8 - remaining;
+        bin[i] = binary.slice(cursor+toNext, cursor+toNext+remaining) + fromPrevious;
+        var fromPrevious = binary.slice(cursor, cursor+toNext);
+        if(toNext === 8)
+            fromPrevious = '';
+        else
+            cursor += 8;
+        i++;
+    }
+
+    var ascii = '';
+    var esc = false; //last character was a ESC
+    for(var i=0; i&lt;length; i++){
+        var codeNum = parseInt(bin[i], 2);
+        if (codeNum == 0x1B){
+            esc = true;
+            continue;
+        }
+        if (esc)
+            ascii += sevenBitEsc[codeNum];
+        else
+            ascii += sevenBitDefault[codeNum];
+        esc = false;
+    }
+    return ascii;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    this.sendCommand('AT+CUSD=2');
+  }
+  var encoding = Pdu.detectEncoding(dcs);
+  var text = '';
+  if (encoding === '16bit') {
+    text = Pdu.decode16Bit(data);
+  } else if (encoding === '7bit') {
+    text = Pdu.<span class="apidocCodeKeywordSpan">decode7Bit</span>(data);
+  } else {
+    cb(new Error('Unknown encoding'));
+    return;
+  }
+  cb(undefined, text);
+}.bind(this);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gsm-modem.pdu.detectEncoding" id="apidoc.element.gsm-modem.pdu.detectEncoding">
+        function <span class="apidocSignatureSpan">gsm-modem.pdu.</span>detectEncoding
+        <span class="apidocSignatureSpan">(dataCodingScheme)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">detectEncoding = function (dataCodingScheme) {
+    if (typeof dataCodingScheme === 'string') dataCodingScheme = parseInt(dataCodingScheme, 16);
+    var binary = ('00000000'+(dataCodingScheme.toString(2))).slice(-8);
+    if(binary == '00000000')
+        return '7bit';
+
+    // if(binary.slice(0, 2) === '00') {
+        var compressed = binary.slice(2, 1) === '1';
+        var bitsHaveMeaning = binary.slice(3, 1) === '1';
+
+        if(binary.slice(4,6) === '00')
+            return '7bit';
+
+        if(binary.slice(4,6) === '01')
+            return '8bit';
+
+        if(binary.slice(4,6) === '10')
+            return '16bit';
+    // }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    if (data.indexOf('OK') !== -1) {
+var processed = false;
+var USSDHandler = function (status, data, dcs) {
+  processed = true;
+  if (status === 1) { //cancel USSD session
+    this.sendCommand('AT+CUSD=2');
+  }
+  var encoding = Pdu.<span class="apidocCodeKeywordSpan">detectEncoding</span>(dcs);
+  var text = '';
+  if (encoding === '16bit') {
+    text = Pdu.decode16Bit(data);
+  } else if (encoding === '7bit') {
+    text = Pdu.decode7Bit(data);
+  } else {
+    cb(new Error('Unknown encoding'));
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gsm-modem.pdu.encode16Bit" id="apidoc.element.gsm-modem.pdu.encode16Bit">
+        function <span class="apidocSignatureSpan">gsm-modem.pdu.</span>encode16Bit
+        <span class="apidocSignatureSpan">(inTextNumberArray)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">encode16Bit = function (inTextNumberArray) {
+    var out = '';
+    for(var i = 0; i&lt;inTextNumberArray.length;i++) {
+        out += ('0000'+(inTextNumberArray[i].toString(16))).slice(-4);
+    }
+    return out;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+} else if(message.encoding === '8bit') {
+
+}
+var text = inTextNumberArray.slice(i*length, (i*length)+length);
+
+var user_data;
+if(message.encoding === '16bit') {
+    user_data = pduParser.<span class="apidocCodeKeywordSpan">encode16Bit</span>(text);
+    var size = (user_data.length / 2);
+
+    if(parts &gt; 1)
+        size += 6; //6 is the number of data headers we append.
+
+} else if(message.encoding === '7bit') {
+    if(parts &gt; 1){
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gsm-modem.pdu.encode7Bit" id="apidoc.element.gsm-modem.pdu.encode7Bit">
+        function <span class="apidocSignatureSpan">gsm-modem.pdu.</span>encode7Bit
+        <span class="apidocSignatureSpan">(inTextNumberArray, paddingBits)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">encode7Bit = function (inTextNumberArray, paddingBits)
+{
+    //as explained here http://mobiletidings.com/2009/07/06/how-to-pack-gsm7-into-septets/
+    var paddingBits = paddingBits || 0;
+    var bits = 0;
+    var out = "";
+
+    if(paddingBits)
+        {
+            bits = 7 - paddingBits;
+            var octet = (inTextNumberArray[0] &lt;&lt; (7 - bits)) % 256
+            out += ('00' + octet.toString(16)).slice(-2);
+            bits++;
+        }
+
+    for(var i = 0; i &lt; inTextNumberArray.length; i++ )
+    {
+        if( bits == 7 )
+        {
+            bits = 0;
+            continue;
+        }
+        var octet = (inTextNumberArray[i] &amp; 0x7f) &gt;&gt; bits;
+        if( i &lt; inTextNumberArray.length - 1 )
+            {octet |= (inTextNumberArray[i + 1] &lt;&lt; (7 - bits))%256;}
+        out += ('00' + octet.toString(16)).slice(-2);
+        bits++;
+    }
+    return out;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    var size = (user_data.length / 2);
+
+    if(parts &gt; 1)
+        size += 6; //6 is the number of data headers we append.
+
+} else if(message.encoding === '7bit') {
+    if(parts &gt; 1){
+        user_data = pduParser.<span class="apidocCodeKeywordSpan">encode7Bit</span>(text,1);
+        var size = 7 + text.length;
+    }
+    else {
+        user_data = pduParser.encode7Bit(text);
+        var size = text.length;
+    }
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gsm-modem.pdu.generate" id="apidoc.element.gsm-modem.pdu.generate">
+        function <span class="apidocSignatureSpan">gsm-modem.pdu.</span>generate
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">generate = function (message) {
+    var smsc = '';
+    var smscPartLength = 0;
+
+	if (message.smsc!==undefined){
+        if (message.smsc_type!==undefined &amp;&amp; (message.smsc_type==0x81 || message.smsc_type==0x91)){
+            smsc += message.smsc_type.toString (16);
+        } else {
+            smsc += '81';
+        }
+        smsc += this.swapNibbles(message.smsc);
+        var smsc_length = octetLength(smsc);
+        smsc = smsc_length + smsc;
+    } else {
+        smsc = '00';
+    }
+    var pdu = smsc;
+    smscPartLength = smsc.length;
+
+    var parts = 1;
+    var inTextNumberArray = this.messageToNumberArray(message);
+
+    if(message.encoding === '16bit' &amp;&amp; inTextNumberArray.length &gt; 70)
+        parts = inTextNumberArray.length / 66;
+
+    else if(message.encoding === '7bit' &amp;&amp; inTextNumberArray.length &gt; 160)
+        parts = inTextNumberArray.length / 153;
+
+    parts = Math.ceil(parts);
+
+    TPMTI  = 1&lt;&lt;0; //(2 bits) type msg, 1=submit by MS
+    TPRD   = 1&lt;&lt;2; //(1 bit) reject duplicates
+    TPVPF  = 1&lt;&lt;3; //(2 bits) validaty f. : 0=not pres, 1=enhanc,2=relative,3=absolute
+    TPSRR  = 1&lt;&lt;5; //(1 bit) want status reply
+    TPUDHI = 1&lt;&lt;6; //(1 bit) 1=header+data, 0=only data
+    TPRP   = 1&lt;&lt;7; //(1 bit) reply-path
+
+    var submit = TPMTI;
+
+    if(parts &gt; 1) //UDHI
+        submit = submit | TPUDHI;
+
+    if (message.request_status!==undefined &amp;&amp; message.request_status)
+    	submit = submit | TPSRR;
+    pdu += ('00'+submit.toString(16)).slice(-2);
+    pdu += '00'; //Reference Number;
+    var receiverSize = ('00'+(parseInt(message.receiver.length, 10).toString(16))).slice(-2);
+    var receiver = pduParser.swapNibbles(message.receiver);
+
+	//Destination MSISDN type
+    var receiverType;
+    if (message.receiver_type !== undefined &amp;&amp; (message.receiver_type === 0x81 || message.receiver_type === 0x91)){
+        receiverType = message.receiver_type.toString(16);
+    } else {
+        receiverType = 81;
+    }
+    pdu += receiverSize.toString(16) + receiverType + receiver;
+    pdu += '00'; //TODO TP-PID
+
+    if(message.encoding === '16bit')
+        pdu += '08';
+    else if(message.encoding === '7bit')
+        pdu += '00';
+
+    var pdus = new Array();
+
+    var csms = randomHexa(2); // CSMS allows to give a reference to a concatenated message
+
+    for(var i=0; i&lt; parts; i++) {
+        pdus[i] = pdu;
+
+        if(message.encoding === '16bit') {
+<span class="apidocCodeCommentSpan">            /* If there are more than one messages to be sent, we are going to have to put some UDH. Then, we would have space only
+             * for 66 UCS2 characters instead of 70 */
+</span>            if(parts === 1)
+                var length = 70;
+            else
+                var length = 66;
+
+        } else if(message.encoding === '7bit') {
+            /* If there are more than one messages to be sent, we are going to have to put some UDH. Then, we would have space only
+             * for 153 ASCII characters instead of 160 */
+            if(parts === 1)
+                var length = 160;
+            else
+                var length = 153;
+        } else if(message.encoding === '8bit') {
+
+        }
+        var text = inTextNumberArray.slice(i*length, (i*length)+length);
+
+        var user_data;
+        if(message.encoding === '16bit') {
+            user_data = pduParser.encode16Bit(text);
+            var size = (user_data.length / 2);
+
+            if(parts &gt; 1)
+                size += 6; //6 is the number of data headers we append.
+
+        } else if(message.encoding === '7bit') {
+            if(parts &gt; 1){
+                user_data = pduParser.encode7Bit(text,1);
+                var size = 7 + text.length;
+            }
+            else {
+                user_data = pduParser.encode7Bit(text);
+                var size = text.length;
+            }
+        }
+
+        pdus[i] += ('00'+parseInt(size).toString(16)).slice(-2);
+
+        // UDHI control header for concaterating message's parts
+        if(parts &gt; 1) {
+            pdus[i] += '05';
+            pdus[i] += '00';
+            pdus[i] += '03';
+            pdus[i] +=  csms;
+            pdus[i] += ('00'+parts.toString(16)).slice(-2);
+            pdus[i] += ('0 ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      opts.smsc_type = 0x81;
+    }
+
+    if (opts.encoding === undefined) {
+      opts.encoding = isGSMAlphabet(opts.text) ? '7bit' : '16bit';
+    }
+
+    var encoded = Pdu.<span class="apidocCodeKeywordSpan">generate</span>(opts);
+    var queue = new PartsSendQueue(this, encoded, cb);
+    queue.sendNext();
+  }
+  //TODO: make textmode
+};
+
+Modem.prototype.deleteAllSMS = function (cb) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gsm-modem.pdu.messageToNumberArray" id="apidoc.element.gsm-modem.pdu.messageToNumberArray">
+        function <span class="apidocSignatureSpan">gsm-modem.pdu.</span>messageToNumberArray
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">messageToNumberArray = function (message) //sp
+{
+    //7bit GSM encoding according to GSM_03.38 character set http://en.wikipedia.org/wiki/GSM_03.38
+    res = [];
+    for (var k=0; k&lt;message.text.length; k++)
+    {
+        if (message.encoding == '7bit'){
+            var character = message.text[k];
+            for(var i=0;i&lt;sevenBitDefault.length;i++)
+            {
+                if(sevenBitDefault[i] == character)
+                    res.push(i);
+                if (sevenBitEsc[i] == character){
+                    res.push(0x1B); //escape character
+                    res.push(i);
+                }
+            }
+        }
+        else if (message.encoding == '16bit')
+            res.push(message.text.charCodeAt(k));
+    }
+    return res;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+} else {
+    smsc = '00';
+}
+var pdu = smsc;
+smscPartLength = smsc.length;
+
+var parts = 1;
+var inTextNumberArray = this.<span class="apidocCodeKeywordSpan">messageToNumberArray</span>(message);
+
+if(message.encoding === '16bit' &amp;&amp; inTextNumberArray.length &gt; 70)
+    parts = inTextNumberArray.length / 66;
+
+else if(message.encoding === '7bit' &amp;&amp; inTextNumberArray.length &gt; 160)
+    parts = inTextNumberArray.length / 153;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gsm-modem.pdu.parse" id="apidoc.element.gsm-modem.pdu.parse">
+        function <span class="apidocSignatureSpan">gsm-modem.pdu.</span>parse
+        <span class="apidocSignatureSpan">(pdu)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parse = function (pdu) {
+    //Cursor points to the last octet we've read.
+    var cursor = 0;
+
+    var obj = parseSMSCPart (pdu);
+    obj.smsc_tpdu = pdu;
+    cursor += obj.length;
+
+    var buffer = new Buffer(pdu.slice(cursor,cursor+6), 'hex');
+    cursor += 6;
+    var smsDeliver = parseInt(buffer[0]);
+
+    var smsDeliverBits = ("00000000"+parseInt(smsDeliver).toString(2)).slice(-8);
+    var tp_mti = smsDeliverBits.slice(-2);
+    obj.tpdu_type = TP_MTI_To_String (tp_mti);
+
+    if (tp_mti=='10'){ //SMS-STATUS-REPORT
+    	return this.parseStatusReport (pdu.slice(cursor-6), obj);
+    }
+    var udhi =  smsDeliverBits.slice(1,2) === "1";
+
+    var senderSize = buffer[1];
+    if(senderSize % 2 === 1)
+        senderSize++;
+
+    obj.sender_type = parseInt(buffer[2]).toString(16);
+    if (obj.sender_type === 'd0') {
+        obj.sender = this.decode7Bit(pdu.slice(cursor, cursor+senderSize), Math.floor(senderSize*4/7)).trim();
+    } else {
+        obj.sender = pduParser.deSwapNibbles(pdu.slice(cursor, cursor+senderSize));
+    }
+    cursor += senderSize;
+
+    var protocolIdentifier = pdu.slice(cursor, cursor+2);
+    cursor += 2;
+
+    var dataCodingScheme = pdu.slice(cursor, cursor+2);
+    cursor = cursor+2;
+
+    obj.dcs = parseInt(dataCodingScheme, 16);
+    obj.encoding = pduParser.detectEncoding(dataCodingScheme);
+
+
+    obj.time = parseTS (pdu.slice(cursor, cursor+14));
+
+    cursor += 14;
+
+    var dataLength = parseInt(pdu.slice(cursor, cursor+2), 16).toString(10);
+    cursor += 2;
+
+    if(udhi) { //User-Data-Header-Indicator: means there's some User-Data-Header.
+        var udhLength = pdu.slice(cursor, cursor+2);
+        var iei = pdu.slice(cursor+2, cursor+4);
+        var headerLength, referenceNumber, parts, currentPart;
+        if(iei == "00") { //Concatenated sms.
+            headerLength = pdu.slice(cursor+4, cursor+6);
+            referenceNumber = pdu.slice(cursor+6, cursor+8);
+            parts = pdu.slice(cursor+8, cursor+10);
+            currentPart = pdu.slice(cursor+10, cursor+12);
+        }
+
+        if(iei == "08") { //Concatenaded sms with a two-bytes reference number
+            headerLength = pdu.slice(cursor+4, cursor+6);
+            referenceNumber = pdu.slice(cursor+6, cursor+10);
+            parts = pdu.slice(cursor+10, cursor+12);
+            currentPart = pdu.slice(cursor+12, cursor+14);
+        }
+
+<span class="apidocCodeCommentSpan">        /*if(iei == '00')
+            cursor += (udhLength-2)*4;
+        else if(iei == '08')
+            cursor += ((udhLength-2)*4)+2;
+        else
+            cursor += (udhLength-2)*2;*/
+</span>        cursor = cursor + (parseInt(udhLength, 16) + 1) * 2;
+    }
+    if(obj.encoding === '16bit')
+        var text = pduParser.decode16Bit(pdu.slice(cursor), dataLength);
+    else if(obj.encoding === '7bit')
+        if (udhi &amp;&amp; iei=='00') var text = pduParser.decode7Bit(pdu.slice(cursor), dataLength-7, 1); //If iei ==0, then there is
+some unpadding to do
+        else if (udhi &amp;&amp; iei=='08') var text = pduParser.decode7Bit(pdu.slice(cursor), dataLength-8); //If no udhi or iei = 08 then
+ no unpadding to do
+        else var text = pduParser.decode7Bit(pdu.slice(cursor), dataLength);
+    else if(obj.encoding === '8bit')
+        var text = ''; //TODO
+
+    obj.text = text;
+
+    if(udhi) {
+        obj['udh'] = {
+            'length' : udhLength,
+            'iei' : iei,
+        };
+
+        if(iei == '00' || iei == '08') {
+            obj['udh']['reference_number'] = referenceNumber;
+            obj['udh']['parts'] = parseInt(parts);
+            obj['udh']['current_part'] = parseInt(currentPart);
+        }
+    }
+
+    return obj;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+for(var i=0; i&lt;msg.udh.parts; i++) {
+    this.messageParts[msg.udh.reference_number].text.push("");
+}
+            }
+            this.messageParts[msg.udh.reference_number].text[msg.udh.current_part - 1] = msg.text;
+            this.messageParts[msg.udh.reference_number].parts_remaining--;
+            if(this.messageParts[msg.udh.reference_number].parts_remaining === 0) {
+var nmsg = JSON.<span class="apidocCodeKeywordSpan">parse</span>(JSON.stringify(msg));
+
+delete nmsg.smsc_tpdu;
+delete nmsg.tpdu_type;
+delete nmsg.udh;
+
+nmsg.text = "";
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gsm-modem.pdu.parseStatusReport" id="apidoc.element.gsm-modem.pdu.parseStatusReport">
+        function <span class="apidocSignatureSpan">gsm-modem.pdu.</span>parseStatusReport
+        <span class="apidocSignatureSpan">(pdu, smsc_parsed)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseStatusReport = function (pdu, smsc_parsed) {
+    var cursor = 0;
+    var obj = smsc_parsed;
+
+    var header = parseInt(pdu.slice(cursor,cursor+2));
+    cursor += 2;
+    //TODO: maybe SMS-COMMAND here
+
+    obj.reference = parseInt(pdu.slice(cursor,cursor+2), 16);
+    cursor += 2;
+
+    var senderSize = parseInt(pdu.slice(cursor,cursor+2), 16);
+    if(senderSize % 2 === 1)
+        senderSize++;
+    cursor += 2;
+
+    obj.sender_type = parseInt(pdu.slice(cursor,cursor+2));
+    cursor += 2;
+
+    obj.sender = pduParser.deSwapNibbles(pdu.slice(cursor, cursor+senderSize));
+    cursor += senderSize;
+
+    obj.smsc_ts = parseTS(pdu.slice(cursor, cursor+14));
+    cursor += 14;
+    obj.discharge_ts = parseTS(pdu.slice(cursor, cursor+14));
+    cursor += 14;
+
+    obj.status = pdu.slice(cursor, cursor+2);
+
+    return obj;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gsm-modem.pdu.swapNibbles" id="apidoc.element.gsm-modem.pdu.swapNibbles">
+        function <span class="apidocSignatureSpan">gsm-modem.pdu.</span>swapNibbles
+        <span class="apidocSignatureSpan">(nibbles)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">swapNibbles = function (nibbles) {
+    var out = '';
+    for(var i = 0; i&lt; nibbles.length; i=i+2) {
+        if(typeof(nibbles[i+1]) === 'undefined') // Add a trailing F.
+            out += 'F'+parseInt(nibbles[i], 16).toString(10);
+        else
+            out += parseInt(nibbles[i+1], 16).toString(10)+parseInt(nibbles[i], 16).toString(10);
+    }
+    return out;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+	if (message.smsc!==undefined){
+    if (message.smsc_type!==undefined &amp;&amp; (message.smsc_type==0x81 || message.smsc_type==0x91)){
+        smsc += message.smsc_type.toString (16);
+    } else {
+        smsc += '81';
+    }
+    smsc += this.<span class="apidocCodeKeywordSpan">swapNibbles</span>(message.smsc);
+    var smsc_length = octetLength(smsc);
+    smsc = smsc_length + smsc;
+} else {
+    smsc = '00';
+}
+var pdu = smsc;
+smscPartLength = smsc.length;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gsm-modem.pdu.ussdEncode" id="apidoc.element.gsm-modem.pdu.ussdEncode">
+        function <span class="apidocSignatureSpan">gsm-modem.pdu.</span>ussdEncode
+        <span class="apidocSignatureSpan">(ussd)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ussdEncode = function (ussd) {
+	var arr = this.messageToNumberArray ({text:ussd,encoding:'7bit'});
+	return this.encode7Bit(arr).toUpperCase();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+/**
+ * Requests custom USSD
+ */
+Modem.prototype.getUSSD = function (ussd, cb) {
+if (this.manufacturer.indexOf('HUAWEI') !== -1) {
+  ussd = Pdu.<span class="apidocCodeKeywordSpan">ussdEncode</span>(ussd);
+}
+this.sendCommand('AT+CUSD=1,"' + ussd + '",15', function (data) {
+  if (data.indexOf('OK') !== -1) {
+    var processed = false;
+    var USSDHandler = function (status, data, dcs) {
+      processed = true;
+      if (status === 1) { //cancel USSD session
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
